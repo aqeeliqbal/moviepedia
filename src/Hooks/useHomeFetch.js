@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 //API
 import API from '../API';
@@ -61,6 +61,6 @@ export const useHomeFetch = () => {
     useEffect(() => {
         if(!searchTerm) sessionStorage.setItem('homeState', JSON.stringify(state))
     },[searchTerm, state])
-    
+
     return {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore};        
 }
