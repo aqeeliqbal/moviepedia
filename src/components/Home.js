@@ -15,7 +15,6 @@ import Button from './Button';
 
 //image
 import NoImage from '../images/no_image.jpg';
-import { Fragment } from 'react/cjs/react.production.min';
 
 const Home = () =>{
 
