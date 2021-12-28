@@ -12,31 +12,31 @@ class SearchBar extends React.Component {
 
     //component life cycle method: componentDidUpdate triggers everytime component updates
     componentDidUpdate(_prevProps, prevState){
-    if(this.state.value !== prevState.value){
-        const {setSearchTerm} = this.props;
+        if(this.state.value !== prevState.value){
+            const {setSearchTerm} = this.props;
 
-        clearTimeout(this.timeout)
-        this.timeout = setTimeout(() => {
-                const {value} = this.state
-                setSearchTerm(value);
-        }, 500);
+            clearTimeout(this.timeout)
+            this.timeout = setTimeout(() => {
+                    const {value} = this.state
+                    setSearchTerm(value);
+            }, 500);
+        }
     }
-}
 
-render(){
-    return (
-        <Wrapper>
-            <Content>
-                <img src={searchIcon} alt="search icon"/>
-                <input 
-                    type='text'
-                    placeholder="Seach Movie"
-                    onChange={event => this.setState({value: event.currentTarget.value})}
-                    value= {this.state.value}/>
-            </Content>
-        </Wrapper>
-    );   
-} 
+    render(){
+        return (
+            <Wrapper>
+                <Content>
+                    <img src={searchIcon} alt="search icon"/>
+                    <input 
+                        type='text'
+                        placeholder="Seach Movie"
+                        onChange={event => this.setState({value: event.currentTarget.value})}
+                        value= {this.state.value}/>
+                </Content>
+            </Wrapper>
+        );   
+    } 
 };
 
     //alternate way to set onChange inseated of inLine function like above.
